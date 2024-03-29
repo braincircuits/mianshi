@@ -125,7 +125,8 @@ public class DTest {
         // 8元一斤的苹果
         Apple apple = new Apple(new BigDecimal(8));
         // 13元一斤的草莓 8优惠策略
-        Strawberry strawberry = new Strawberry(new BigDecimal(13),discountStrategy);
+        Strawberry strawberry = new Strawberry(new BigDecimal(13));
+        strawberry.setDiscount(discountStrategy);
 
         Mango mango = new Mango(new BigDecimal(20));
 
