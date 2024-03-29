@@ -50,6 +50,7 @@ public class DTest {
         Apple apple = new Apple(new BigDecimal(8));
         // 13元一斤的草莓
         Strawberry strawberry = new Strawberry(new BigDecimal(13));
+        // 20 元一斤的芒果
         Mango mango = new Mango(new BigDecimal(20));
 
         Order appleOrder = new Order(new BigDecimal(appleNum), apple);
