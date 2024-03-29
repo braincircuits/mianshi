@@ -1,5 +1,7 @@
 package pay;
 
+import util.AssertUtil;
+
 import java.math.BigDecimal;
 
 public class PaymentDiscountStrategyImpl implements PaymentDiscountStrategy {
@@ -10,9 +12,7 @@ public class PaymentDiscountStrategyImpl implements PaymentDiscountStrategy {
 
     public PaymentDiscountStrategyImpl(BigDecimal threshold, BigDecimal discountPrice) {
         // 优惠门槛必须大于优惠力度
-        if (threshold == null || discountPrice == null ||  discountPrice.compareTo(BigDecimal.ZERO) < 0) {
-            throw new RuntimeException("参数异常");
-        }
+        AssertUtil.isTrue(threshold == null || discountPrice == null ||  discountPrice.compareTo(BigDecimal.ZERO) < 0,"参数异常");
         this.threshold = threshold;
         this.discountPrice = discountPrice;
     }

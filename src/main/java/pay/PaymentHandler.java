@@ -1,5 +1,7 @@
 package pay;
 
+import util.AssertUtil;
+
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.Arrays;
@@ -25,9 +27,8 @@ public class PaymentHandler {
     }
 
     public BigDecimal countFruits(Order... orders) {
-        if (orders == null || orders.length == 0) {
-            throw new RuntimeException("商品不能为空");
-        }
+        AssertUtil.isTrue(orders == null || orders.length == 0,"商品不能为空");
+
         BigDecimal bigDecimal = Arrays.stream(orders).map(e -> e.getNum().multiply(e.getFruit().fruitPrice())).reduce(BigDecimal::add).get();
 
         // 四舍五入

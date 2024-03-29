@@ -1,6 +1,7 @@
 import fruit.Apple;
 import fruit.Mango;
 import fruit.Strawberry;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import pay.Order;
 import pay.PaymentDiscountStrategy;
